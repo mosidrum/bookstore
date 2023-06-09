@@ -1,4 +1,4 @@
-$primaryColor: rgb(46,164,255);
+$primaryColor: rgb(46, 164, 255);
 $noneActive: #000;
 
 header {
@@ -7,7 +7,7 @@ header {
   height: 90px;
   align-items: center;
   padding: 5px 150px;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
 
   nav {
     ul {
@@ -19,28 +19,27 @@ header {
       align-items: center;
 
       li {
+        color: $primaryColor;
+        font-size: 22px;
+
+        .title {
           color: $primaryColor;
-          font-size: 22px;
+        }
 
-          .title {
-            color: $primaryColor;
-          }
+        a {
+          text-decoration: none;
+        }
 
-          a{
-            text-decoration: none;
-          }
+        .book {
+          color: $noneActive;
+          font-size: 14px;
+        }
 
-          .book {
-            color: $noneActive;
-            font-size: 14px;
-          }
-
-          .cat {
-            color: $noneActive;
-            font-size: 14px;
-          }
+        .cat {
+          color: $noneActive;
+          font-size: 14px;
+        }
       }
-      
     }
   }
 }
