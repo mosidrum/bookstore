@@ -1,0 +1,31 @@
+$primaryColor: rgb(46, 164, 255);
+
+.container {
+  gap: 50px;
+
+  .book {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    margin: 20px 1px;
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+  
+    li {
+      list-style-type: none;
+    }
+
+    .delete-btn {
+      padding: 10px 20px;
+      color: #fff;
+      background-color: $primaryColor;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .delete-btn:hover {
+      cursor: pointer;
+    }
+  }
+}
