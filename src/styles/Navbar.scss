@@ -1,0 +1,46 @@
+$primaryColor: rgb(46,164,255);
+$noneActive: #000;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+  padding: 5px 150px;
+  background-color: rgb(255,255,255);
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      list-style-type: none;
+      justify-content: center;
+      align-items: center;
+
+      li {
+          color: $primaryColor;
+          font-size: 22px;
+
+          .title {
+            color: $primaryColor;
+          }
+
+          a{
+            text-decoration: none;
+          }
+
+          .book {
+            color: $noneActive;
+            font-size: 14px;
+          }
+
+          .cat {
+            color: $noneActive;
+            font-size: 14px;
+          }
+      }
+      
+    }
+  }
+}
