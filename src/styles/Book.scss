@@ -1,6 +1,8 @@
 $primaryColor: rgb(46, 164, 255);
 
 .container {
+  max-height: 67vh;
+  overflow-y: auto;
   gap: 50px;
 
   .book {
