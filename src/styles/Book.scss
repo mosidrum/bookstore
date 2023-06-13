@@ -18,4 +18,16 @@ $primaryColor: rgb(46, 164, 255);
       list-style-type: none;
     }
   }
+
+  .delete-btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .delete-btn:hover {
+    cursor: pointer;
+  }
 }
