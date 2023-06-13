@@ -1,15 +1,12 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import DefaultProps from './DefaultProps';
 import '../styles/Book.scss';
-import { allBooks, deleteBook } from '../redux/books/booksSlice';
+import { allBooks } from '../redux/books/booksSlice';
+import Button from './Button';
 
 const Book = () => {
-  const dispatch = useDispatch();
   const books = useSelector(allBooks);
-  const handleDeleteBook = (id) => {
-    dispatch(deleteBook(id));
-  };
 
   return (
     <div className="container">
@@ -24,13 +21,7 @@ const Book = () => {
           <li>
             {book.category}
           </li>
-          <button
-            type="submit"
-            className="delete-btn"
-            onClick={() => handleDeleteBook(book.item_id)}
-          >
-            Delete
-          </button>
+          <Button itemId={book.item_id} />
         </div>
       ))}
     </div>
