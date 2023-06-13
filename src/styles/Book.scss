@@ -1,6 +1,8 @@
 $primaryColor: rgb(46, 164, 255);
 
 .container {
+  max-height: 67vh;
+  overflow-y: auto;
   gap: 50px;
 
   .book {
@@ -15,17 +17,17 @@ $primaryColor: rgb(46, 164, 255);
     li {
       list-style-type: none;
     }
+  }
 
-    .delete-btn {
-      padding: 10px 20px;
-      color: #fff;
-      background-color: $primaryColor;
-      border: none;
-      border-radius: 5px;
-    }
+  .delete-btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 5px;
+  }
 
-    .delete-btn:hover {
-      cursor: pointer;
-    }
+  .delete-btn:hover {
+    cursor: pointer;
   }
 }
