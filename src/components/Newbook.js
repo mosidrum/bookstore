@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import '../styles/Newbook.scss';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, addNewBook } from '../redux/books/booksSlice';
 
 const Newbook = () => {
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
   const [bookDetails, setBookdetails] = useState({
-    item_id: uuidv4(),
     title: '',
     author: '',
     category: '',
@@ -24,7 +23,15 @@ const Newbook = () => {
     }));
   };
 
-  const bookAdded = (e) => {
+  function clear() {
+    setBookdetails({
+      title: '',
+      author: '',
+      category: '',
+    });
+  }
+
+  const bookAdded = async (e) => {
     e.preventDefault();
     if (bookDetails.title === '' || bookDetails.author === '' || bookDetails.category === '') {
       setMessage('All fileds are required');
@@ -34,12 +41,8 @@ const Newbook = () => {
       return;
     }
     dispatch(addBook(bookDetails));
-    setBookdetails({
-      item_id: uuidv4(),
-      title: '',
-      author: '',
-      category: '',
-    });
+    dispatch(addNewBook(bookDetails));
+    clear();
   };
 
   return (

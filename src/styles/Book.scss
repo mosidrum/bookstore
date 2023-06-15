@@ -1,7 +1,7 @@
 $primaryColor: rgb(46, 164, 255);
 
 .container {
-  max-height: 67vh;
+  max-height: 72vh;
   overflow-y: auto;
   gap: 50px;
 
@@ -10,11 +10,17 @@ $primaryColor: rgb(46, 164, 255);
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    margin: 20px 1px;
+    margin: 20px;
     background-color: rgb(255, 255, 255);
     font-size: 18px;
+    /* stylelint-disable */
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    /* stylelint-enable */
 
     li {
+      width: 25%;
+      font-size: 20px;
+      text-align: left;
       list-style-type: none;
     }
   }
