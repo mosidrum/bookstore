@@ -24,7 +24,7 @@ const Navbar = () => (
         </li>
       </ul>
     </nav>
-    <i><IoMdContact size={30} color="rgb(46,164,255)" /></i>
+    <i><IoMdContact size={35} color="rgb(46,164,255)" /></i>
   </header>
 );
 

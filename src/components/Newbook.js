@@ -7,11 +7,12 @@ import { addBook, addNewBook } from '../redux/books/booksSlice';
 const Newbook = () => {
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
-  const [bookDetails, setBookdetails] = useState({
+  const initialState = {
     title: '',
     author: '',
     category: '',
-  });
+  };
+  const [bookDetails, setBookdetails] = useState({ initialState });
 
   const handleBookDetails = (e) => {
     const {
@@ -22,14 +23,6 @@ const Newbook = () => {
       [name]: type === 'checkbox' ? category : value,
     }));
   };
-
-  function clear() {
-    setBookdetails({
-      title: '',
-      author: '',
-      category: '',
-    });
-  }
 
   const bookAdded = async (e) => {
     e.preventDefault();
@@ -42,7 +35,7 @@ const Newbook = () => {
     }
     dispatch(addBook(bookDetails));
     dispatch(addNewBook(bookDetails));
-    clear();
+    setBookdetails(initialState);
   };
 
   return (
