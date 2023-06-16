@@ -34,7 +34,7 @@ const Book = () => {
             </div>
             <ul className="actions">
               <button type="submit">Comments</button>
-              |
+              <span>|</span>
               <button
                 className="btn"
                 type="submit"
@@ -42,7 +42,7 @@ const Book = () => {
               >
                 Remove
               </button>
-              |
+              <span>|</span>
               <button type="submit">Edit</button>
             </ul>
           </div>
@@ -56,6 +56,7 @@ const Book = () => {
               <p className="completed">Completed</p>
             </div>
           </div>
+          <hr className="line" />
           <div className="right">
             <p className="current">CURRENT CHAPTER</p>
             <p className="chapter">{book.chapter}</p>
