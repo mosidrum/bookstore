@@ -43,7 +43,7 @@ $primaryColor: rgb(46, 164, 255);
         .title {
           width: 100%;
           font-size: 20px;
-          font-weight: 600px;
+          font-weight: 600;
         }
 
         .category {
@@ -51,12 +51,12 @@ $primaryColor: rgb(46, 164, 255);
           font-weight: bolder;
           font-size: 13px;
         }
-  
+
         .author {
           font-size: 12px;
         }
       }
-      
+
       .actions {
         height: 30%;
         display: flex;
@@ -106,7 +106,7 @@ $primaryColor: rgb(46, 164, 255);
     gap: 10px;
     font-family: 'Roboto', sans-serif;
     width: 20%;
-    
+
     .current {
       font-size: 12px;
       font-weight: 500;
