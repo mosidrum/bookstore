@@ -66,6 +66,14 @@ $primaryColor: rgb(46, 164, 255);
         gap: 20px;
         list-style: none;
         cursor: pointer;
+
+        button {
+          border: none;
+          background-color: #fff;
+          // font-weight: 200;
+          font-size: 14px;
+          cursor: pointer;
+        }
       }
     }
   }

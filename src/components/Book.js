@@ -1,26 +1,26 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+/* eslint-disabled */
+import { CircularProgressbar } from 'react-circular-progressbar';
 import DefaultProps from './DefaultProps';
 import '../styles/Book.scss';
 import {
   allBooks, deleteBook, fetchBooks, removeBook,
 } from '../redux/books/booksSlice';
-import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = () => {
   const dispatch = useDispatch();
   const booksFromApi = useSelector(allBooks);
+  console.log(booksFromApi);
 
-  const progress = 75
   useEffect(() => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
   const handleDeleteBook = (id) => {
-    dispatch(deleteBook({ id }));
     dispatch(removeBook({ id }));
+    dispatch(deleteBook({ id }));
   };
 
   return (
@@ -30,32 +30,37 @@ const Book = () => {
           <div className="book-label left">
             <div className="head">
               <small className="category">{book.category}</small>
-              <h5 className='title'>{book.title}</h5>
-              <small className='author'>{book.author}</small>
+              <h5 className="title">{book.title}</h5>
+              <small className="author">{book.author}</small>
             </div>
-            <ul className='actions'>
-              <li>Comments</li>
+            <ul className="actions">
+              <button type="submit">Comments</button>
               |
-              <li
+              <button
+                className="btn"
+                type="submit"
                 onClick={() => handleDeleteBook(book.item_id)}
-              >Remove</li>
+              >
+                Remove
+              </button>
               |
-              <li>Edit</li>
+              <button type="submit">Edit</button>
             </ul>
           </div>
           <div className="middle">
-            <CircularProgressbar value={progress}  />
+            <CircularProgressbar value={book.progress} />
             <div className="side">
               <span className="num">
-              {progress}%
+                {book.progress}
+                %
               </span>
-              <p className='completed'>Completed</p>
+              <p className="completed">Completed</p>
             </div>
           </div>
           <div className="right">
-            <p className='current'>CURRENT CHAPTER</p>
-            <p className='chapter'>CHAPTER 17</p>
-            <button className='progress'>UPDATE PROGRESS</button>
+            <p className="current">CURRENT CHAPTER</p>
+            <p className="chapter">CHAPTER 17</p>
+            <button type="submit" className="progress">UPDATE PROGRESS</button>
           </div>
         </div>
       ))}
