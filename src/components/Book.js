@@ -6,7 +6,7 @@ import '../styles/Book.scss';
 import {
   allBooks, deleteBook, fetchBooks, removeBook,
 } from '../redux/books/booksSlice';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = () => {
@@ -43,8 +43,14 @@ const Book = () => {
               <li>Edit</li>
             </ul>
           </div>
-          <div className="book-label middle">
-            <CircularProgressbar value={progress} text={`${progress}%`} />
+          <div className="middle">
+            <CircularProgressbar value={progress}  />
+            <div className="side">
+              <span className="num">
+              {progress}%
+              </span>
+              <p className='completed'>Completed</p>
+            </div>
           </div>
           <div className="right">
             <p className='current'>CURRENT CHAPTER</p>
