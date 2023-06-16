@@ -12,7 +12,6 @@ import 'react-circular-progressbar/dist/styles.css';
 const Book = () => {
   const dispatch = useDispatch();
   const booksFromApi = useSelector(allBooks);
-  console.log(booksFromApi);
 
   useEffect(() => {
     dispatch(fetchBooks());
@@ -59,7 +58,7 @@ const Book = () => {
           </div>
           <div className="right">
             <p className="current">CURRENT CHAPTER</p>
-            <p className="chapter">CHAPTER 17</p>
+            <p className="chapter">{book.chapter}</p>
             <button type="submit" className="progress">UPDATE PROGRESS</button>
           </div>
         </div>
