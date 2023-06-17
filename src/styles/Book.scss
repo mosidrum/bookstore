@@ -9,7 +9,6 @@ $primaryColor: rgb(46, 164, 255);
 }
 
 .container {
-
   .book {
     display: flex;
     height: 200px;
@@ -22,7 +21,7 @@ $primaryColor: rgb(46, 164, 255);
     margin: 40px 50px;
     background-color: rgb(255, 255, 255);
     font-size: 18px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 1px;
 
     .book-label {
       width: 50%;
@@ -54,7 +53,7 @@ $primaryColor: rgb(46, 164, 255);
         }
 
         .author {
-          color: rgb(117,174,220);
+          color: rgb(117, 174, 220);
           font-weight: 300;
           margin-top: 15px;
           font-size: 16px;
@@ -72,7 +71,7 @@ $primaryColor: rgb(46, 164, 255);
         cursor: pointer;
 
         button {
-          color: rgb(117,174,220);
+          color: rgb(117, 174, 220);
           border: none;
           font-family: 'Cambo', serif;
           background-color: #fff;
@@ -119,29 +118,36 @@ $primaryColor: rgb(46, 164, 255);
     display: flex;
     flex-direction: column;
     gap: 30px;
-    font-family: 'Roboto', sans-serif;
-    width: 20%;
 
-    .current {
-      font-size: 12px;
-      font-weight: 500;
-    }
+    .right-top {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
 
-    .chapter {
-      font-size: 15px;
-      font-weight: 200;
+      .current {
+        font-family: 'Cambo', serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: rgb(174, 172, 172);
+      }
+
+      .chapter {
+        font-family: 'Cambo', serif;
+        font-size: 15px;
+        font-weight: 200;
+      }
     }
 
     .progress {
       background-color: $primaryColor;
-      font-size: 12px;
+      font-size: 16px;
       border: none;
       border-radius: 5px;
       color: white;
       text-align: center;
-      margin-top: 10px;
-      padding: 7px;
+      padding: 12px;
       cursor: pointer;
+      font-family: 'Cambo', serif;
     }
   }
 }

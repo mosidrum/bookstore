@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;1,600&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
 $background: #fff;
 $generalbg: rgb(250, 250, 250);
-$Font: 18px;
+$Font: 20px;
 $height: 30px;
 $primary: rgb(46, 164, 255);
 $padding: 5px 10px;
+$shadow: rgba(0, 0, 0, 0.05) 0 0 0 1px;
 
 * {
   padding: 0;
@@ -12,57 +15,54 @@ $padding: 5px 10px;
 }
 
 .newbook {
-  background: $background;
-  width: 100%;
-  padding: 10px;
+  margin: 100px 50px;
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(174, 171, 171);
+  }
 
   .form-book {
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 90px;
-    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
 
     .add-book {
-      width: 45%;
-      height: 30px;
-      font-size: $Font;
+      width: 400px;
+      border: none;
+      padding: 15px;
       border-radius: 5px;
-      border: 1px solid $primary;
-      outline: none;
+      font-size: 18px;
+      box-shadow: $shadow;
     }
 
     .author {
-      height: 30px;
-      font-size: $Font;
+      width: 250px;
+      font-size: 18px;
+      border: none;
+      padding: 15px;
       border-radius: 5px;
-      width: 120%;
-      border: 1px solid $primary;
-      outline: none;
+      box-shadow: $shadow;
     }
 
     .categories {
-      width: 160%;
-      height: $height;
-      font-size: $Font;
-      text-align: center;
-      border-radius: 5px;
+      width: 200px;
+      font-size: 18px;
       border: none;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: $shadow;
     }
 
     .btn {
-      width: 18%;
-      font-size: 14px;
-      height: $height;
+      width: 200px;
+      font-size: 18px;
       background: $primary;
-      color: $background;
-      padding: $padding;
-      border: none;
+      padding: 15px;
       border-radius: 5px;
-    }
-
-    .btn:hover {
+      color: #fff;
+      border: none;
       cursor: pointer;
     }
   }

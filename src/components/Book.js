@@ -58,8 +58,10 @@ const Book = () => {
           </div>
           <hr className="line" />
           <div className="right">
-            <p className="current">CURRENT CHAPTER</p>
-            <p className="chapter">{book.chapter}</p>
+            <div className="right-top">
+              <p className="current">CURRENT CHAPTER</p>
+              <p className="chapter">{book.chapter}</p>
+            </div>
             <button type="submit" className="progress">UPDATE PROGRESS</button>
           </div>
         </div>

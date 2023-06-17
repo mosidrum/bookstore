@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
 import '../styles/Newbook.scss';
 import { addBook, addNewBook } from '../redux/books/booksSlice';
 
@@ -40,7 +39,7 @@ const Newbook = () => {
 
   return (
     <div className="newbook">
-      <h4>ADD NEW BOOK</h4>
+      <h2>ADD NEW BOOK</h2>
       <form
         onSubmit={bookAdded}
         className="form-book"
