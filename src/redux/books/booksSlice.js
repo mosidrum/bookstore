@@ -11,6 +11,51 @@ const initialState = {
   message: '',
 };
 
+const generateNum = () => {
+  const minNum = 1;
+  const maxNum = 100;
+  const randomNum = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+  return randomNum;
+};
+
+const generateChapter = () => {
+  const chapters = [
+    'Chapter 1',
+    'Chapter 2',
+    'Chapter 3',
+    'Chapter 4',
+    'Chapter 5',
+    'Chapter 6',
+    'Chapter 7',
+    'Chapter 8',
+    'Chapter 9',
+    'Chapter 10',
+    'Chapter 11',
+    'Chapter 12',
+    'Chapter 13',
+    'Chapter 14',
+    'Chapter 15',
+    'Chapter 16',
+    'Chapter 17',
+    'Chapter 18',
+    'Chapter 19',
+    'Chapter 20',
+    'Chapter 21',
+    'Chapter 22',
+    'Chapter 23',
+    'Chapter 24',
+    'Chapter 25',
+    'Chapter 26',
+    'Chapter 27',
+    'Chapter 28',
+    'Chapter 29',
+    'Chapter 30',
+  ];
+  const index = Math.floor(Math.random() * chapters.length);
+  const chapter = chapters[index];
+  return chapter.toUpperCase();
+};
+
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const res = await axios.get(baseUrl);
   return res.data;
@@ -18,11 +63,15 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 
 export const addNewBook = createAsyncThunk('books/addNewBook', async (book) => {
   try {
+    const randonNum = generateNum();
+    const currentChapter = generateChapter();
     const res = await axios.post(baseUrl, {
       item_id: uuidv4(),
       title: book.title,
       author: book.author,
       category: book.category,
+      progress: randonNum,
+      chapter: currentChapter,
     });
     return res.data;
   } catch (error) {
@@ -53,6 +102,8 @@ const booksSlice = createSlice({
         title,
         author,
         category,
+        progress: generateNum(),
+        chapter: generateChapter(),
       };
       state.books.push(book);
     },
@@ -74,6 +125,8 @@ const booksSlice = createSlice({
           title: result[id][0].title,
           author: result[id][0].author,
           category: result[id][0].category,
+          progress: generateNum(),
+          chapter: generateChapter(),
         }));
       })
       .addCase(fetchBooks.rejected, (state) => {

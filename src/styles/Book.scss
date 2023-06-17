@@ -1,39 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;1,600&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;1,600&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cambo&display=swap');
+
 $primaryColor: rgb(46, 164, 255);
 
-.container {
-  max-height: 72vh;
-  overflow-y: auto;
-  gap: 50px;
+.booklist {
+  margin: 0 0 2.375rem;
+}
 
+.container {
   .book {
     display: flex;
+    height: 200px;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 90px;
+    margin: 40px 50px;
     background-color: rgb(255, 255, 255);
     font-size: 18px;
-    /* stylelint-disable */
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-    /* stylelint-enable */
+    box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 1px;
 
-    li {
-      width: 25%;
+    .book-label {
+      width: 50%;
+      height: 80px;
       font-size: 20px;
       text-align: left;
       list-style-type: none;
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .head {
+        height: 100%;
+        margin-top: -20px;
+
+        .title {
+          width: 100%;
+          font-family: 'Roboto Slab', serif;
+          font-size: 30px;
+          font-weight: bolder;
+        }
+
+        .category {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: bolder;
+          color: rgb(165, 163, 163);
+          font-size: 13px;
+        }
+
+        .author {
+          color: rgb(117, 174, 220);
+          font-weight: 300;
+          margin-top: 15px;
+          font-size: 16px;
+          font-family: 'Cambo', serif;
+        }
+      }
+
+      .actions {
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        font-weight: 200;
+        gap: 20px;
+        list-style: none;
+        cursor: pointer;
+
+        button {
+          color: rgb(117, 174, 220);
+          border: none;
+          font-family: 'Cambo', serif;
+          background-color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        span {
+          font-size: 25px;
+          color: rgb(201, 198, 198);
+        }
+      }
     }
   }
 
-  .delete-btn {
-    padding: 10px 20px;
-    color: #fff;
-    background-color: $primaryColor;
-    border: none;
-    border-radius: 5px;
+  .middle {
+    height: 100px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    .side {
+      margin-top: 20px;
+
+      .num {
+        font-size: 25px;
+      }
+
+      .completed {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
   }
 
-  .delete-btn:hover {
-    cursor: pointer;
+  .line {
+    width: 100px;
+    transform: rotate(90deg);
+  }
+
+  .right {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .right-top {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .current {
+        font-family: 'Cambo', serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: rgb(174, 172, 172);
+      }
+
+      .chapter {
+        font-family: 'Cambo', serif;
+        font-size: 15px;
+        font-weight: 200;
+      }
+    }
+
+    .progress {
+      background-color: $primaryColor;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      cursor: pointer;
+      font-family: 'Cambo', serif;
+    }
   }
 }
